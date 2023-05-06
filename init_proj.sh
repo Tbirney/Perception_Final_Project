@@ -8,5 +8,8 @@ grep -qxF "export TURTLEBOT3_MODEL=burger" ~/.bashrc || echo "export TURTLEBOT3_
 source ~/.bashrc
 
 sudo apt update
-sudo apt-get install ros-noetic-fiducials
 sudo apt upgrade -y
+sudo apt autoremove -y
+
+sudo apt install ros-noetic-fiducials ros-noetic-map-server ros-noetic-amcl \
+                 ros-noetic-move-base ros-noetic-gmapping -y
