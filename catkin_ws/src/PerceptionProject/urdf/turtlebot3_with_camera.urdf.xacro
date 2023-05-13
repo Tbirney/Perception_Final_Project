@@ -182,6 +182,7 @@
     <parent link="camera_dummy_link"/>
     <child link="camera_frame"/>
   </joint>
+
   <link name="camera_frame"/>
 
   <joint name="camera_optical_joint" type="fixed">
