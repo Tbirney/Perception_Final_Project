@@ -8,13 +8,13 @@
 
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find PerceptionProject)/worlds/turtlebot3_world.world" />
+    <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
-  </include>  
+  </include>
 
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find PerceptionProject)/urdf/turtlebot3_with_camera.urdf.xacro" />
 
@@ -25,10 +25,10 @@
   </node>
 
     <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
-  <include file="$(find turtlebot3_slam)/launch/turtlebot3_$(arg slam_methods).launch">
+  <!-- <include file="$(find turtlebot3_slam)/launch/turtlebot3_$(arg slam_methods).launch">
     <arg name="model" value="$(arg model)"/>
     <arg name="configuration_basename" value="$(arg configuration_basename)"/>
-  </include>
+  </include> -->
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
   <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find PerceptionProject)/rviz/turtlebot3.rviz"/> -->

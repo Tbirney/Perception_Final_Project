@@ -6,14 +6,11 @@
   <!-- <param name="robot_description" command="$(find xacro)/xacro inorder '$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro'"/> -->
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find PerceptionProject)/urdf/turtlebot3_with_camera.urdf.xacro" />
   
+  <!-- This fixes the broken link transformations in rviz
   <arg name="use_tf_static" default="false"/> 
-  <!-- Map server -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-    <param name="tf_prefix" value="$(arg multi_robot_name)"/>
-    <param name="use_tf_static" value="$(arg use_tf_static)"/>
-  </node>
-
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+      <param name="use_tf_static" value="$(arg use_tf_static)"/>
+  </node> -->
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
@@ -40,6 +37,8 @@
     <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
   </node>
   <!-- rviz -->
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/> -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find PerceptionProject)/rviz/nav.rviz"/>
 </launch>
