@@ -36,7 +36,30 @@
     <!-- Launch Gazebo, doesn't need to be here but I want it -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
     <!-- Run RVIZ so we can see the cost map -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find PerceptionProject)/rviz/turtlebot3.rviz"/>
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find PerceptionProject)/rviz/turtlebot3.rviz"/> -->
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find PerceptionProject)/rviz/turtlebot3.rviz"/> -->
+
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find PerceptionProject)/map.pgm 0.050000"/>
+
+ <!--- Run AMCL --> 
+    <include file="$(find amcl)/examples/amcl_diff.launch" />
+
+   <!-- move_base -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+        <rosparam file="$(find PerceptionProject)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find PerceptionProject)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find turtlebot3_navigation)/param/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find turtlebot3_navigation)/param/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find turtlebot3_navigation)/param/move_base_params.yaml" command="load" />
+        <rosparam file="$(find turtlebot3_navigation)/param/dwa_local_planner_params_$(arg model).yaml" command="load" /> 
+        <remap from="cmd_vel" to="/cmd_vel"/>
+        <remap from="odom" to="odom"/>
+        <param name="DWAPlannerROS/min_vel_x" value="0.0" if="false" />
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
 
 
 </launch>

@@ -2,15 +2,17 @@
 
     <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find PerceptionProject)/urdf/turtlebot3_with_camera.urdf.xacro" />
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find PerceptionProject)/map.pgm 0.050000"/>
 
 
-    <arg name="use_tf_static" default="false"/> 
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-        <param name="use_tf_static" value="$(arg use_tf_static)"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value=""/>
     </node>
 
 
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find PerceptionProject)/map.pgm 0.050000"/>
+
+ <!--- Run AMCL --> 
     <include file="$(find amcl)/examples/amcl_diff.launch" />
 
    <!-- move_base -->
@@ -27,7 +29,6 @@
         <param name="DWAPlannerROS/min_vel_x" value="0.0" if="false" />
     </node>
 
-    <arg name="open_rviz" default="true"/>
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
 
