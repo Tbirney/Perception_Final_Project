@@ -10,13 +10,13 @@
 
     <!-- load our world. Right Now its just the default gazebo world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find PerceptionProject)/worlds/turtlebot3_world.world" />
+        <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>
         <arg name="headless" value="false"/>
         <arg name="debug" value="false"/>
-    </include>  
+    </include>
 
     <!-- Load in the turtlebot with lidar and rgbd cam -->
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find PerceptionProject)/urdf/turtlebot3_with_camera.urdf.xacro" />
@@ -38,5 +38,5 @@
     <!-- Run RVIZ so we can see the cost map -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find PerceptionProject)/rviz/turtlebot3.rviz"/>
 
-
+    
 </launch>
