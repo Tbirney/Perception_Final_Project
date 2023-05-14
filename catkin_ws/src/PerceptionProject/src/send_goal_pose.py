@@ -4,11 +4,8 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from geometry_msgs.msg import Pose, Point, Quaternion
 from tf.transformations import quaternion_from_euler
 
-def send_goal_pose():
+def send_goal_pose(pos):
 
-    pos = [2, 1]
-
-    rospy.init_node('send_goal_pose')
 
     # movebase is the thing that will actually move the turtlebot
     move_client = SimpleActionClient('move_base', MoveBaseAction)
@@ -41,8 +38,23 @@ def send_goal_pose():
 
 # If the python node is executed as main process (sourced directly)
 if __name__ == '__main__':
-    try:
-        result = send_goal_pose()
-    except rospy.ROSInterruptException:
-        rospy.loginfo("No Result from navigation")
+
+    rospy.init_node('send_goal_pose')
+
+    poses = [
+        [-1, -2],
+        [1, -2],
+        [2, -1],
+        [2, 1],
+        [1, 2],
+        [-1, 2],
+        [-2, 1],
+        [-2, -1]
+    ]
+
+    for p in poses:
+        try:
+            result = send_goal_pose(p)
+        except rospy.ROSInterruptException:
+            rospy.loginfo(f"pose {p} had no solution")
 
