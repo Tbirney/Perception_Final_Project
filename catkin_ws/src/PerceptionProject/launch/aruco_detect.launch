@@ -1,0 +1,11 @@
+<!-- Run the aruco_gazebo node -->
+<launch>
+  <node pkg="aruco_gazebo" name="aruco_gazebo" type="aruco.py" output="screen" respawn="false">
+    <param name="camera_frame" value="camera_optical_frame" />
+    <param name="framerate" value="10" />
+    <param name="fiducial_len" value="0.25" />
+    <param name="vis_msgs" value="false" />
+    <remap from="/camera/compressed" to="/camera/color/image_raw"/>
+    <remap from="/camera_info" to="/camera/color/image_info"/>
+  </node>
+</launch>
