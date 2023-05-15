@@ -9,7 +9,6 @@ source ~/.bashrc
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt autoremove -y
 
 sudo apt install ros-noetic-aruco-ros ros-noetic-map-server ros-noetic-amcl \
                  ros-noetic-move-base ros-noetic-gmapping -y
