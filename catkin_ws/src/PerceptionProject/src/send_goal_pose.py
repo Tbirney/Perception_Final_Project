@@ -50,18 +50,15 @@ class Navigator:
         else:
             return self.move_client.get_result()
 
-    
+
     def navigate(self):
         
         arcuo_detector = rospy.Subscriber('/aruco_single/pose', PoseStamped, self.found_goal_callback)
-
 
         for p in self.poses:
             if self.found_goal == True:
                 break
             self.send_goal_pose(p)
-
-
 
 
 # If the python node is executed as main process (sourced directly)
