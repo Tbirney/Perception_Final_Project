@@ -7,6 +7,3 @@
 [submodule "catkin_ws/src/turtlebot3_simulations"]
 	path = catkin_ws/src/turtlebot3_simulations
 	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-[submodule "catkin_ws/src/turtlebot3_autorace_2020"]
-	path = catkin_ws/src/turtlebot3_autorace_2020
-	url = https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020.git
