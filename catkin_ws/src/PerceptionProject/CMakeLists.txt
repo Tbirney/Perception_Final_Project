@@ -80,3 +80,8 @@ install(DIRECTORY launch models rviz worlds
 catkin_install_python(PROGRAMS src/send_goal_pose.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+
+catkin_install_python(PROGRAMS src/transform_image_pose.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
