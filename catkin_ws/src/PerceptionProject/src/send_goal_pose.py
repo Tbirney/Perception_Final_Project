@@ -1,14 +1,30 @@
 import rospy
 from actionlib import SimpleActionClient
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
-from geometry_msgs.msg import Pose, Point, Quaternion
+from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
 from tf.transformations import quaternion_from_euler
+
+poses = [
+    [-1, -2],
+    [1, -2],
+    [2, -1],
+    [2, 1],
+    [1, 2],
+    [-1, 2],
+    [-2, 1],
+    [-2, -1]
+]
+
+move_client = SimpleActionClient('move_base', MoveBaseAction)
+
+
+def found_goal(data):
+    move_client.cancel_all_goals()
+    send_goal_pose([data.pose.position.x, data.pose.position.y])
 
 def send_goal_pose(pos):
 
-
     # movebase is the thing that will actually move the turtlebot
-    move_client = SimpleActionClient('move_base', MoveBaseAction)
     move_client.wait_for_server()
 
     # https://www.programcreek.com/python/example/113987/move_base_msgs.msg.MoveBaseGoal
@@ -40,19 +56,10 @@ def send_goal_pose(pos):
 if __name__ == '__main__':
 
     rospy.init_node('send_goal_pose')
-
-    poses = [
-        [-1, -2],
-        [1, -2],
-        [2, -1],
-        [2, 1],
-        [1, 2],
-        [-1, 2],
-        [-2, 1],
-        [-2, -1]
-    ]
+    pose_listener = rospy.Subscriber('/aruco_single/pose', PoseStamped, found_goal)
 
     for p in poses:
+
         try:
             result = send_goal_pose(p)
         except rospy.ROSInterruptException:
