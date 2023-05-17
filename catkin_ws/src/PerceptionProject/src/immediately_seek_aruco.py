@@ -17,9 +17,10 @@ class Navigator:
 
 
     def found_goal_callback(self, data):
+        self.move_client.stop_tracking_goal()
         self.latest_aruco_pos = [data.pose.position.x,data.pose.position.y]
-        self.move_client.cancel_all_goals()
         self.send_goal_pose(self.latest_aruco_pos)
+
 
     def send_goal_pose(self, pos):
         # https://www.programcreek.com/python/example/113987/move_base_msgs.msg.MoveBaseGoal
@@ -57,6 +58,8 @@ class Navigator:
             if self.latest_aruco_pos is not None:
                 break
             self.send_goal_pose(p)
+
+        
 
 
 # If the python node is executed as main process (sourced directly)
