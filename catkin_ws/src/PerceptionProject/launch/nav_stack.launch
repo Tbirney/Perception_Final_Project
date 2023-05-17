@@ -1,29 +1,24 @@
 <launch>
   <!-- Arguments -->
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
-  <arg name="map_file" default="$(find PerceptionProject)/map.yaml"/>
+  <arg name="map" default="map.yaml"/>
+  <arg name="map_file" default="$(find PerceptionProject)/$(arg map)"/>
   <arg name="multi_robot_name" default=""/>
-  <!-- <param name="robot_description" command="$(find xacro)/xacro inorder '$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro'"/> -->
+
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find PerceptionProject)/urdf/turtlebot3_with_camera.urdf.xacro" />
   
-  <!-- This fixes the broken link transformations in rviz
-  <arg name="use_tf_static" default="false"/> 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-      <param name="use_tf_static" value="$(arg use_tf_static)"/>
-  </node> -->
-  <!-- Map server -->
+
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
-  <!-- AMCL -->
-  <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
 
-  <!-- Arguments -->
-  <!-- <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/> -->
+  <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
+  <include file="$(find PerceptionProject)/launch/find_arucos.launch"/>
+
+
   <arg name="cmd_vel_topic" default="/cmd_vel" />
   <arg name="odom_topic" default="odom" />
   <arg name="move_forward_only" default="false"/>
 
-  <!-- move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
     <rosparam file="$(find PerceptionProject)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -36,9 +31,8 @@
     <remap from="odom" to="$(arg odom_topic)"/>
     <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
   </node>
-  <!-- rviz -->
-    <!-- <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/> -->
+
+
   <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find PerceptionProject)/rviz/nav.rviz"/>
 

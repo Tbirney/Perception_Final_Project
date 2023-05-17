@@ -77,6 +77,6 @@ install(DIRECTORY launch models rviz worlds
 ################################################################################
 # Test
 ################################################################################
-catkin_install_python(PROGRAMS src/send_goal_pose.py
+catkin_install_python(PROGRAMS src/explore_then_dock.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

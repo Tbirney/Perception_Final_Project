@@ -4,7 +4,6 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
 from tf.transformations import quaternion_from_euler
 
-
 class Navigator:
 
     def __init__(self, poses):
@@ -12,16 +11,13 @@ class Navigator:
         rospy.init_node('send_goal_pose', disable_signals = True)
 
         self.poses = poses
-        self.found_goal = False
         self.move_client = SimpleActionClient('move_base', MoveBaseAction)
         self.move_client.wait_for_server()
+        self.latest_aruco_pos = None
 
 
     def found_goal_callback(self, data):
-        self.move_client.cancel_all_goals()
-        self.send_goal_pose([data.pose.position.x, data.pose.position.y])
-        self.found_goal = True
-        # rospy.signal_shutdown('Found Goal')
+        self.latest_aruco_pos = [data.pose.position.x,data.pose.position.y]
 
 
     def send_goal_pose(self, pos):
@@ -56,9 +52,11 @@ class Navigator:
         arcuo_detector = rospy.Subscriber('/aruco_single/pose', PoseStamped, self.found_goal_callback)
 
         for p in self.poses:
-            if self.found_goal == True:
-                break
             self.send_goal_pose(p)
+        
+
+        rospy.loginfo(f'Aruco Pos is {self.latest_aruco_pos}')
+        self.send_goal_pose(self.latest_aruco_pos)
 
 
 # If the python node is executed as main process (sourced directly)
@@ -71,9 +69,16 @@ if __name__ == '__main__':
         [2, 1],
         [1, 2],
         [-1, 2],
-        [-2, 1],
-        [-2, -1]
+        [-2, 1]
     ]
+
+    # poses = [
+    #     [0.5, 1.5],
+    #     [1.5, 1.5],
+    #     [2.5, 0.5],
+    #     [1.5, 1.5],
+    #     [0.5, 1.5]
+    # ]
 
     navigator = Navigator(poses)
     navigator.navigate()
