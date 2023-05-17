@@ -88,15 +88,15 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>403 762000000</sim_time>
-      <real_time>42 116586105</real_time>
-      <wall_time>1684288738 211427911</wall_time>
-      <iterations>40591</iterations>
-      <model name='Marker1'>
-        <pose>0.432125 0.300435 0.05 0 0 -0.006321</pose>
+      <sim_time>814 680000000</sim_time>
+      <real_time>189 5575649</real_time>
+      <wall_time>1684300660 621953993</wall_time>
+      <iterations>172116</iterations>
+      <model name='Marker0'>
+        <pose>2.69856 0.350133 0.014682 0 -0 2.3965</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.432125 0.300435 0.05 0 0 -0.006321</pose>
+          <pose>2.69856 0.350133 0.014682 0 -0 2.3965</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -113,83 +113,73 @@
         </link>
       </model>
       <model name='number1_half_meter'>
-        <pose>0.218052 0.29587 0.2 0 -0 3.14159</pose>
+        <pose>0.161155 0.250056 0.2 0 -0 3.14159</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.218052 0.29587 0.2 0 -0 3.14159</pose>
+          <pose>0.161155 0.250056 0.2 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='number2_half_meter'>
-        <pose>1.5 1.75 0.2 0 -0 3.14159</pose>
+        <pose>2.41379 1.78762 0.2 0 -0 3.14159</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.5 1.75 0.2 0 -0 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='number3_half_meter'>
-        <pose>2.79907 0.241302 0.2 0 -0 3.14159</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.79907 0.241302 0.2 0 -0 3.14159</pose>
+          <pose>2.41379 1.78762 0.2 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='one_meter_wall'>
-        <pose>1.5 0.500002 0.175 -1e-06 -0 1.57014</pose>
+        <pose>1.5 0.500003 0.174996 0 8e-06 1.57133</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.5 0.500002 0.175 -1e-06 -0 1.57014</pose>
+          <pose>1.5 0.500003 0.174996 0 8e-06 1.57133</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.216625 -0.000142 -0.030947 0.000811 1.23786 -0</acceleration>
-          <wrench>0.216625 -0.000142 -0.030947 0 -0 0</wrench>
+          <acceleration>0.174705 5.66383 2.96966 -0.946399 1.191 0.035913</acceleration>
+          <wrench>0.174705 5.66383 2.96966 0 -0 0</wrench>
         </link>
       </model>
       <model name='three_meter_wall'>
-        <pose>1.49946 -0.025095 0.174703 2e-05 -0.000198 -4e-06</pose>
+        <pose>1.50075 -0.025068 0.17481 -0.000142 -0.000129 7e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.49946 -0.025095 0.174703 2e-05 -0.000198 -4e-06</pose>
+          <pose>1.50075 -0.025068 0.17481 -0.000142 -0.000129 7e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-9.72114 0.091924 -0.078861 2.6784 -1.27615 -2.87417</acceleration>
-          <wrench>-9.72114 0.091924 -0.078861 0 -0 0</wrench>
+          <acceleration>-8.54915 -0.175856 -1.25085 1.09686 1.15987 -0.300982</acceleration>
+          <wrench>-8.54915 -0.175856 -1.25085 0 -0 0</wrench>
         </link>
       </model>
       <model name='three_meter_wall_0'>
-        <pose>1.49865 2.02506 0.174703 2e-05 -0.000198 -4e-06</pose>
+        <pose>1.50087 2.02515 0.174998 -5.5e-05 3e-06 3e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.49865 2.02506 0.174703 2e-05 -0.000198 -4e-06</pose>
+          <pose>1.50087 2.02515 0.174998 -5.5e-05 3e-06 3e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-9.72114 0.091924 -0.078861 2.6784 -1.27615 -2.87417</acceleration>
-          <wrench>-9.72114 0.091924 -0.078861 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='two_meter_wall'>
-        <pose>-0.024946 0.999976 0.17495 1e-06 -5e-05 1.57085</pose>
+        <pose>-0.038915 0.999356 0.174979 1.6e-05 2.2e-05 1.52538</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.024946 0.999976 0.17495 1e-06 -5e-05 1.57085</pose>
+          <pose>-0.038915 0.999356 0.174979 1.6e-05 2.2e-05 1.52538</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.184525 -8.69429 -0 -0.597775 1.01206 -0</acceleration>
-          <wrench>0.184525 -8.69429 -0 0 -0 0</wrench>
+          <acceleration>0.132723 6.51988 -2.45065 0.445009 0.761226 -0.002537</acceleration>
+          <wrench>0.132723 6.51988 -2.45065 0 -0 0</wrench>
         </link>
       </model>
       <model name='two_meter_wall_0'>
-        <pose>3.02496 0.999997 0.17495 -1e-06 5e-05 1.57081</pose>
+        <pose>3.02496 0.999987 0.175 -8e-06 -0 1.57077</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>3.02496 0.999997 0.17495 -1e-06 5e-05 1.57081</pose>
+          <pose>3.02496 0.999987 0.175 -8e-06 -0 1.57077</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.184178 8.6943 -0 0.597735 -1.01007 0</acceleration>
-          <wrench>-0.184178 8.6943 -0 0 -0 0</wrench>
+          <acceleration>-0.40413 5.21511 19.6469 -1.5261 -0.358983 -3.05287</acceleration>
+          <wrench>-0.40413 5.21511 19.6469 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -812,110 +802,6 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>1.74864 1.08564 0.4 0 -0 3.14159</pose>
     </model>
-    <model name='number3_half_meter'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://number1/meshes/number.dae</uri>
-              <scale>0.5 0.5 0.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://number3/materials/scripts</uri>
-              <uri>model://number3/materials/textures</uri>
-              <name>Number/Three</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision_0'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.4 0.4 0.4</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.15637 0.829053 0.4 0 -0 0</pose>
-    </model>
     <model name='one_meter_wall'>
       <link name='link'>
         <inertial>
@@ -1018,14 +904,21 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>1.76219 0.98557 0 0 -0 0</pose>
     </model>
-    <model name='Marker1'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-1.89502 3.15538 4.2151 0 0.841797 -0.832983</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='Marker0'>
       <static>1</static>
       <link name='link'>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://marker1/meshes/Marker1.dae</uri>
-              <scale>0.6 0.6 0.6</scale>
+              <uri>model://marker0/meshes/Marker0.dae</uri>
+              <scale>0.54 0.54 0.54</scale>
             </mesh>
           </geometry>
         </visual>
@@ -1033,14 +926,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.808309 0.847568 0 0 -0 0</pose>
+      <pose>0.447323 0.274437 0 0 -0 0</pose>
     </model>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>-2.6794 0.556885 1.70877 0 0.485795 -0.060978</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
   </world>
 </sdf>

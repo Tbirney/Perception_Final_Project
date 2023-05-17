@@ -17,8 +17,8 @@ class Navigator:
 
 
     def found_goal_callback(self, data):
-        
         self.latest_aruco_pos = [data.pose.position.x,data.pose.position.y]
+
 
     def send_goal_pose(self, pos):
         # https://www.programcreek.com/python/example/113987/move_base_msgs.msg.MoveBaseGoal
@@ -52,14 +52,11 @@ class Navigator:
         arcuo_detector = rospy.Subscriber('/aruco_single/pose', PoseStamped, self.found_goal_callback)
 
         for p in self.poses:
-            rospy.loginfo(f'Aruco Pos is {self.latest_aruco_pos}')
-            if self.latest_aruco_pos is not None:
-                self.send_goal_pose(self.latest_aruco_pos)
-                break
-
             self.send_goal_pose(p)
         
-        
+
+        rospy.loginfo(f'Aruco Pos is {self.latest_aruco_pos}')
+        self.send_goal_pose(self.latest_aruco_pos)
 
 
 # If the python node is executed as main process (sourced directly)
@@ -74,6 +71,14 @@ if __name__ == '__main__':
         [-1, 2],
         [-2, 1]
     ]
+
+    # poses = [
+    #     [0.5, 1.5],
+    #     [1.5, 1.5],
+    #     [2.5, 0.5],
+    #     [1.5, 1.5],
+    #     [0.5, 1.5]
+    # ]
 
     navigator = Navigator(poses)
     navigator.navigate()
