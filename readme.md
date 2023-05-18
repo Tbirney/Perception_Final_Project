@@ -1,4 +1,8 @@
-Will store code and sim info for final project
+### Description
+
+This project demonstrates a mapping, navigation, and aruco recognition based navigation scenario for the turtlebot platform in multiple worlds
+
+### Setup
 
 In order to enable the catkin_ws, cd into the project dir and run
 
@@ -12,7 +16,7 @@ Copy the gazebo_models_perception_group_4 to be in your .gazebo folder in your h
 
 The URDF for the robot is unused but available in this repo.
 
-Run Instructions:
+### Run Instructions
 
 To Launch The Default World And Rvis
 
