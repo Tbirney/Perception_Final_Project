@@ -12,7 +12,7 @@ chmod 777 init_proj.sh
 ./init_proj.sh
 ```
 
-Copy the gazebo_models_perception_group_4 to be in your .gazebo folder in your home directory
+Copy the contents of the gazebo_models_perception_group_4 to be in your .gazebo folder in your home directory
 
 The URDF for the robot is unused but available in this repo.
 
