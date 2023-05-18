@@ -4,7 +4,7 @@ This project demonstrates a mapping, navigation, and aruco recognition based nav
 
 ### Setup
 
-__THIS WILL INSTALL COMPONENTS TO YOUR LAPTOP__
+__THIS WILL INSTALL COMPONENTS TO YOUR SYSTEM__
 
 In order to enable the catkin_ws, cd into the project dir and run
 
