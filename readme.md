@@ -3,7 +3,7 @@
 This project demonstrates a mapping, navigation, and aruco recognition based navigation scenario for the turtlebot platform in multiple worlds
 
 ### Setup
-
+__THIS WILL INSTALL COMPONENTS TO YOUR LAPTOP__
 In order to enable the catkin_ws, cd into the project dir and run
 
 ```
