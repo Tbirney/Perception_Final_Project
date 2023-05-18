@@ -1,6 +1,6 @@
 ### Description
 
-This project demonstrates a mapping, navigation, and aruco recognition based navigation scenario for the turtlebot platform in multiple worlds
+This project demonstrates a mapping, navigation, and aruco recognition based visual servoing scenario for the turtlebot platform in multiple worlds
 
 ### Setup
 
