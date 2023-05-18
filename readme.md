@@ -15,9 +15,11 @@ The URDF for the robot is unused but available in this repo.
 Run Instructions:
 
 To Launch The Default World And Rvis
+
 `roslaunch PerceptionProject turtlebot3_world_with_camera.launch`
 
 To Launch Mapping 
+
 `roslaunch PerceptionProject map_gen.launch`
 
 To Launch Navigation
@@ -31,9 +33,11 @@ __If you want to use the second map then use__
 
 
 To Launch The Default World And Rvis
+
 `roslaunch PerceptionProject turtlebot3_world_with_camera.launch x_pos:=0.1 y_pos:=1 world_name:=three_aruco_world.world`
 
 To Launch Mapping 
+
 `roslaunch PerceptionProject map_gen.launch map:=3map.yaml`
 
 To Launch Navigation
