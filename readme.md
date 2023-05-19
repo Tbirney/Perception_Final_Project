@@ -40,7 +40,7 @@ __If you want to use the second map then use__
 
 To Launch The Default World And Rvis
 
-`roslaunch PerceptionProject turtlebot3_world_with_camera.launch x_pos:=0.1 y_pos:=1 world_name:=three_aruco_world.world`
+`roslaunch PerceptionProject turtlebot3_world_with_camera.launch x_pos:=0.5 y_pos:=1 world_name:=three_aruco_world.world`
 
 To Launch Mapping 
 
@@ -48,7 +48,7 @@ To Launch Mapping
 
 To Launch Navigation
 ```
-roslaunch PerceptionProject turtlebot3_world_with_camera.launch x_pos:=0.1 y_pos:=1 world_name:=three_aruco_world.world
+roslaunch PerceptionProject turtlebot3_world_with_camera.launch x_pos:=0.5 y_pos:=1 world_name:=three_aruco_world.world
 roslaunch PerceptionProject nav_stack.launch
 rosrun PerceptionProject explore_then_dock.py
 ```
