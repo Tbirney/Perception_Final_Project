@@ -56,3 +56,7 @@ rosrun PerceptionProject explore_then_dock.py
 When you launch the nav stack you will need to click the green arrow to set the initial pose location of the robot in rviz
 
 You will need to go in to the explore_then_dock.py file and change the pose set to the second list for the second map because that was not externally parameterized
+
+### Hardware Instructions:
+
+To run the hardware code, refer to the README.md in the `robot_scripts` directory
